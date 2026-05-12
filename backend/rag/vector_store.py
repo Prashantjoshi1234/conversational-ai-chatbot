@@ -1,7 +1,7 @@
-
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
-from dotenv import load_dotenv()
+from dotenv import load_dotenv
+import os
 
 load_dotenv()
 

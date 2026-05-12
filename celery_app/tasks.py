@@ -18,7 +18,7 @@ def run_scheduled_etl(self):
     """
     Scheduled Etl task:
     - Scrape
-    - pdf to text
+    - save to text
     - clean
     - chunk
     - Embed

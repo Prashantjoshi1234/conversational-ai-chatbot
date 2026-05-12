@@ -3,9 +3,14 @@ import requests
 import uuid
 import sys
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_URL = 
 
 # ----------------------------
-# Path Fix (IMPORTANT)
+# Path 
 # ----------------------------
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
@@ -13,8 +18,8 @@ sys.path.append(ROOT_DIR)
 # ----------------------------
 # Configuration
 # ----------------------------
-API_URL = "http://127.0.0.1:8000/api/chat"
-NEW_CHAT_API = "http://127.0.0.1:8000/api/session/clear"
+API_URL = os.getenv("API_URL")
+NEW_CHAT_API = os.getenv("NEW_CHAT_API")
 
 st.set_page_config(
     page_title="Conversational AI Chatbot",

@@ -189,8 +189,6 @@ class RAGGenerator:
 
         logger.info("========== RAG DEBUG END ==========")
 
-
-
         return{
             "answer" : answer,
             "sources": list({

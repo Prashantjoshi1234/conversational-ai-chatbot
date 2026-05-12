@@ -1,10 +1,12 @@
-
+from fastapi import File, UploadFile, HTTPException, APIRouter, Depends, Request
 from fastapi import APIRouter
 from backend.agent.conversation_agent import ConversationAgent
 from backend.utils.rate_limiter import TokenBucket
 from pydantic import BaseModel
 import logging
 from typing import List
+from backend.Authentication.auth_dependencies import get_current_user_role
+
 
 #------- logger configuration ----------
 
@@ -62,10 +64,12 @@ session_buckets = {}  # session_id -> TokenBucket
 
 logger.info("chat_routes log creation started")
 
-
 @router.post("/chat", response_model=ChatResponse)
-def chat_endpoint(request: ChatRequest):
+def chat_endpoint(request: ChatRequest, role : str = Depends(get_current_user_role)):
 
+    if role != "admin":
+        raise HTTPException(status_code=403, detail = "NOT AUTHORIZED TO ACCESS")
+    
     session_id = request.session_id
     message = request.message
 
@@ -88,6 +92,8 @@ def chat_endpoint(request: ChatRequest):
 
     logger.info(f"Chat response generated successfully | session_id={session_id}")
     return response
+
+
 
 
 @router.post("/session/clear")
