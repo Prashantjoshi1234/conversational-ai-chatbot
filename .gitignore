@@ -1,0 +1,38 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+
+# Logs
+*.log
+logs/
+
+# IDE / EDITORS
+# --------------------
+.vscode/
+.idea/
+
+# NOTEBOOK CHECKPOINTS
+# --------------------
+.ipynb_checkpoints/
+
+# TEST / TEMP FILES
+# --------------------
+tmp/
+temp/
+
+# Vector Database
+chroma_db/
+
+# data
+data/

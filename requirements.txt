@@ -1,0 +1,49 @@
+# Backend framework
+fastapi
+uvicorn
+
+# Frontend
+streamlit
+
+# Web scraping
+requests
+beautifulsoup4
+lxml
+
+# Vector database + embeddings
+chromadb
+sentence-transformers
+
+# LLM & RAG
+langchain
+langchain_community
+langchain-chroma
+transformers
+accelerate
+sentencepiece
+
+# Scheduler for ETL
+celery
+redis  # Python client for Redis server
+
+# Environment & configuration
+python-dotenv
+pydantic
+
+
+#database connection
+sqlalchemy
+pymysql
+alembic
+
+
+# Authentication & Security
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+
+#rate limiting
+slowapi
+
+#form-data (file upload)
+python-multipart-0.0.26
