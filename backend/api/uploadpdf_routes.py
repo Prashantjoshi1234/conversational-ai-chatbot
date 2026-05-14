@@ -73,7 +73,7 @@ async def upload_file(request: Request, files: List[UploadFile] = File(...), rol
     if role != "admin":
         raise HTTPException(status_code=403, detail = "NOT AUTHORIZED TO ACCESS")
 
-    upload_dir = "data/ramw_uploaded_pdf_files"
+    upload_dir = "data/raw_uploaded_pdf_files"
     os.makedirs(upload_dir, exist_ok=True)
 
     state = load_uploaded_pdf_state()
